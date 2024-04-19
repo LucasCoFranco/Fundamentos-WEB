@@ -36,3 +36,16 @@ var soma = require('./soma.js')
 
 comando para mostrar no terminal
 console.log(soma(10,10))
+
+Para montagem de um servidor web
+var http = require('http')
+
+http.createServer(function(req, res0){
+    res0.end("Mensagem direcionada")
+}).listen(8081)
+
+console.log("Servidor está ativo!") 
+para mostrar que o servidor esta funcionando
+
+e para testar, basta abrir o browser e colocar o ip ou localhost:8081 (que foi a porta escolhida acima)
+Se tudo der certo, aparecera a mensagem direcionada 
