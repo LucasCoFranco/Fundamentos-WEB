@@ -1,0 +1,38 @@
+o node é muito util pois ele opera no lado do servidor e não precisa de um browser para executa-lo
+
+para fazer a instalação do node, basta escrever no terminal do vscode o comando
+ndm install node
+
+Para escrever uma mensagem na tela, basta colocar no arquivo
+console.log("mensagem");
+
+e para executar no terminal basta escrever 
+node .\nomedoarquivosalvo
+
+Exemplo de uma soma no javascript
+var n1 = 10
+var n2 = 10
+
+var total = n1 + n2
+
+console.log("Total: " +total)
+
+exemplo de if/else
+if(total <= 10)
+  { console.log("True")}
+else {console.log("False")};
+
+comando para denominar uma função para fazer a media
+var soma = function(n1,n2){
+    return n1 + n2
+}
+
+Comando para exportar para outro arquivo
+module.exports = soma
+
+
+comando para chamar de outro arquivo 
+var soma = require('./soma.js')
+
+comando para mostrar no terminal
+console.log(soma(10,10))
