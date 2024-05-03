@@ -1,7 +1,7 @@
 o node é muito util pois ele opera no lado do servidor e não precisa de um browser para executa-lo
 
 para fazer a instalação do node, basta escrever no terminal do vscode o comando
-ndm install node
+npm install node
 
 Para escrever uma mensagem na tela, basta colocar no arquivo
 console.log("mensagem");
