@@ -18,7 +18,7 @@ app.listen(8081, function() {
 })
 
 
-para criação de pagina web em que os parametros são passados na propria rota do navegador
+para criação de pagina web em que os parametros são passados na propria rota na url do navegador
 const express = require("express")
 const app = express()
 
@@ -36,3 +36,14 @@ app.listen(8081, function() {
 
 ai no navegador escrever por exemplo
 http://localhost:8081/produtos/borracha/5
+
+para instalar uma especie de live server do node, deve-se baixar o nodemon
+npm install nodemon -g
+//o parametro -g permitirá que esse recurso seja implementado globalmente no seu projeto
+
+Para utilizarmos o nodemon precisamos digitar o seguinte comando:
+nodemon app.js
+Esse recurso verificará cada alteração no seu codigo node e realizara a reinicialização do servidor no termminal
+
+podemos direcionar um arquivo cada vez que uma rota é acessada através do seguinte comando
+res.sendFile(__dirname +"/html")
