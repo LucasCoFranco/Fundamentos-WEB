@@ -1,0 +1,11 @@
+para funcionar esse projeto, deve-se ter instalado o XAMMP e as expansões do sequelize, do node e do mysql pelo npm
+
+no XAMMP, startar o servidor apache e o mysql
+
+acessar a central de configurações pelo browser "localhost/phpmyadmin"
+
+Criar uma base de dados e um usuario
+
+colocar as credenciais do usuario no codigo "banco.js"
+
+executar o codigo, em caso de sucesso, aparecerá no terminal a mensagem "Conectado com sucesso!"
