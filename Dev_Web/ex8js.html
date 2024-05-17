@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <script>
+            var genero = prompt("Digite seu gênero: (m/f)").toLowerCase()
+            while (genero != "m" && genero != "f"){
+                genero = prompt("Valor inválido. Selecione entre m/f").toLowerCase()
+            } 
+
+            var altura = parseFloat(prompt("Digite sua altura: "))
+
+        
+            if (genero == "m") {
+                var idealm =  ((72.7 * altura) - 58)
+                alert("Seu peso ideal é de : " + idealm.toFixed(2)); 
+            } else {
+                var idealf =   ((62.1 * altura) - 44.7)
+                alert("Seu peso ideal é de: " + idealf.toFixed(2)); 
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+
+<body>
+    <script>
+        /*A atribuição dos conceitos obedece a tabela abaixo. O algoritmo deve escrever o número do aluno, suas notas,
+         a média dos exercícios, a média de aproveitamento, o conceito correspondente e
+          a mensagem 'Aprovado' se o conceito for A, B ou C, e 'Reprovado' se o conceito for D ou E. 
+          Média de aproveitamento Conceito
+
+>= 90 A  
+
+>= 75 e < 90 B  
+
+>= 60 e < 75 C  
+
+>= 40 e < 60 D  
+
+< 40 E*/
+        let numero = prompt("Digite seu numero de aluno: ")
+        let nota1 = prompt("Digite sua primeira nota: ")
+        
+        let nota2 = prompt("Digite sua segunda nota: ")
+        let nota3 = prompt("Digite sua terceira nota: ")
+        let nota4 = prompt("Digite sua quarta nota: ")
+        let media = ((nota1 + nota2 + nota3 + nota4) / 4)
+
+        if (media >= 90) {
+            alert("Seu número de aluno é : " + numero + " e sua media é de " + media + "e você está com conceito A")
+        } else if (media >= 75 && media < 90) {
+            alert("Seu número de aluno é :" + numero, "Sua media é de " + media, "e você está com conceito B")
+        } else if (media >= 60 && media < 75) {
+            alert("Seu número de aluno é :" + numero, "\nSua media é de " + media, "e você está com conceito C")
+        } else if (media >= 40 && media < 60) {
+            alert("Seu número de aluno é :" + numero, "\nSua media é de " + media, "e você está com conceito D")
+        } else {
+            alert("Seu número de aluno é :" + numero, "\nSua media é de " + media, "e você está com conceito E")
+        }
+    </script>
+</body>
+
+</html>
