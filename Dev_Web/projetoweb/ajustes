@@ -9,3 +9,9 @@ Criar uma base de dados e um usuario
 colocar as credenciais do usuario no codigo "banco.js"
 
 executar o codigo, em caso de sucesso, aparecerá no terminal a mensagem "Conectado com sucesso!"
+
+o sequelize é um ORM
+
+ORM - faz a interação do banco de dados sem a necessidade de comandos sql
+
+Foi criado o banco "exemplo" e nele foi inserido as informações, como a criação de tabelas
