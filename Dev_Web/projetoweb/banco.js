@@ -28,11 +28,31 @@ const Agendamentos = sequelize.define('agendamentos',{
     },
     cep: {
         type: Sequelize.INTEGER
+    },
+    cidade: {
+        type: Sequelize.STRING
+    },
+    estado: {
+        type: Sequelize.STRING
+    },
+    observacao: {
+        type: Sequelize.TEXT
     }
-})
+});
 
 Agendamentos.sync({force: true}).then(() => {
     console.log("Tabela criada com sucesso!")
 }).catch((error) => {
     console.log("Erro ao criar tabela: " + error)
-}) //isso acima é a criação da tabela "agendamentos" no banco de dados que foi criado logo acima
+});
+
+//Agendamentos.sync({force: true})
+Agendamentos.create({
+    nome: "Gabriel Henrique Alves da Silva",
+    endereco: "Rua Coronel Ernesto",
+    bairro: "Cidade São Mateus",
+    cep: 09823112,
+    cidade: "São Paulo",
+    estado: "SP",
+    observacao: "Realizar os serviços de alistamento e balanceamento do meu veiculo"
+});
