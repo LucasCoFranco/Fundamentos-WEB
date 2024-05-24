@@ -15,3 +15,5 @@ o sequelize é um ORM
 ORM - faz a interação do banco de dados sem a necessidade de comandos sql
 
 Foi criado o banco "exemplo" e nele foi inserido as informações, como a criação de tabelas
+
+é necessario criar o banco de dados na mão (eu acho)
