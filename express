@@ -47,3 +47,17 @@ Esse recurso verificará cada alteração no seu codigo node e realizara a reini
 
 podemos direcionar um arquivo cada vez que uma rota é acessada através do seguinte comando
 res.sendFile(__dirname +"/html")
+
+EX de express:
+const express = require("express/'/0
+const app = express()
+const handlebars = require("express-handlebars").engine
+
+app.engine("handlebars", handlebars({defaultLayout: "main"}))
+app.set("view engine", "handlebars")
+
+app.get("/", function(req, res){
+    res.render("primeira_pagina")
+})
+
+app.listen(8081
