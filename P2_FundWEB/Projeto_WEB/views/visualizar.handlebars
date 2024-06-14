@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Cadastrados</title>
+</head>
+<body>
+    <h2>Dados Cadastrados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Veículo</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Endereço</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{veiculo}}</td>
+                <td>{{marca}}</td>
+                <td>{{ano}}</td>
+                <td>{{endereco}}</td>
+                <td>{{email}}</td>
+                <td>{{telefone}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
