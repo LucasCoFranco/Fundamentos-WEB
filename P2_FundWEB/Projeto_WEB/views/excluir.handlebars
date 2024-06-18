@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Dados</title>
+</head>
+<body>
+    <h2>Excluir Dados</h2>
+
+    <p>Você está prestes a excluir os seguintes dados:</p>
+
+    <ul>
+        <li><strong>Id:</strong> {{dados.id}}</li>
+        <li><strong>Nome:</strong> {{dados.nome}}</li>
+    </ul>
+
+    <form action="/excluir/{{dados.id}}" method="POST">
+        <button type="submit">Confirmar Exclusão</button>
+    </form>
+</body>
+</html>
