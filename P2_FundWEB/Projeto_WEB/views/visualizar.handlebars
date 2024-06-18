@@ -7,9 +7,15 @@
 </head>
 <body>
     <h2>Dados Cadastrados</h2>
+    <form action="/buscar" method="GET">
+        <label for="filtro">Filtrar por Nome:</label>
+        <input type="text" id="filtro" name="filtro">
+        <button type="submit">Buscar</button>
+    </form>
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Veículo</th>
                 <th>Marca</th>
@@ -22,6 +28,7 @@
         <tbody>
             {{#each dados}}
             <tr>
+                <td>{{id}}</td>
                 <td>{{nome}}</td>
                 <td>{{veiculo}}</td>
                 <td>{{marca}}</td>
@@ -29,6 +36,8 @@
                 <td>{{endereco}}</td>
                 <td>{{email}}</td>
                 <td>{{telefone}}</td>
+                <td><a href="../alterar/{{id}}">Editar</a></td>
+                <td><a href="../excluir/{{id}}">Excluir</a></td>
             </tr>
             {{/each}}
         </tbody>
