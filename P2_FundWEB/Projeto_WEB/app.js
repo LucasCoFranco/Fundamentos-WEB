@@ -5,6 +5,7 @@ const bodyParser = require("body-parser")
 const post = require("./models/post.js")
 const router = express.Router();
 const { agendamentos } = require('./models/banco.js');
+const { Sequelize, DataTypes, Op } = require('sequelize');
 
 app.engine("handlebars", handlebars({
     defaultLayout: "main", runtimeOptions: {
@@ -83,7 +84,7 @@ app.post("/alterar/:id", function (req, res) {
 
 app.get('/buscar', async (req, res) => {
     res.render("buscar");
-    const { filtro } = req.params;
+    const { filtro } = req.query;
 
     try {
         const dados = await agendamentos.findAll({
@@ -92,26 +93,27 @@ app.get('/buscar', async (req, res) => {
             }
         });
 
-        res.render('visualizar', { dados }); // Renderiza a página de visualização com os dados filtrados
+        res.render("visualizar", { dados: dados }); // Renderiza a página de visualização com os dados filtrados
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
         res.status(500).send('Erro ao buscar dados');
     }
 });
 
+
 app.get('/excluir/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
         // Encontra o registro pelo ID
-        const dado = await agendamentos.findByPk(id);
+        const dados = await agendamentos.findByPk(id);
 
         if (!dados) {
             return res.status(404).send('Dados não encontrados para exclusão');
         }
 
         // Renderiza a página de confirmação de exclusão
-        res.render('excluir', { dados });
+        res.render("excluir", { dados: dados });
     } catch (error) {
         console.error('Erro ao buscar dados para exclusão:', error);
         res.status(500).send('Erro ao buscar dados para exclusão');
@@ -124,16 +126,16 @@ app.post('/excluir/:id', async (req, res) => {
 
     try {
         // Encontra o registro pelo ID e o exclui
-        const dado = await agendamentos.findByPk(id);
+        const dados = await agendamentos.findByPk(id);
         
-        if (!dado) {
+        if (!dados) {
             return res.status(404).send('Dados não encontrados para exclusão');
         }
 
-        await dado.destroy();
+        await dados.destroy();
 
         // Redireciona para uma página ou rota após a exclusão
-        res.redirect('/'); // Por exemplo, redireciona para a página inicial
+        res.redirect('/visualizar'); // Por exemplo, redireciona para a página inicial
     } catch (error) {
         console.error('Erro ao excluir dados:', error);
         res.status(500).send('Erro ao excluir dados');
