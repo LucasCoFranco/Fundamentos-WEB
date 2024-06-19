@@ -53,16 +53,16 @@
                     tbody.innerHTML = ''; // Limpa o conteúdo atual da tabela
 
                     // Itera sobre os dados recebidos e adiciona as linhas na tabela
-                    data.forEach(dado => {
+                    data.forEach(dados => {
                         var row = `<tr>
-                            <td>${dado.id}</td>
-                            <td>${dado.nome}</td>
-                            <td>${dado.veiculo}</td>
-                            <td>${dado.marca}</td>
-                            <td>${dado.ano}</td>
-                            <td>${dado.endereco}</td>
-                            <td>${dado.email}</td>
-                            <td>${dado.telefone}</td>
+                            <td>${dados.id}</td>
+                            <td>${dados.nome}</td>
+                            <td>${dados.veiculo}</td>
+                            <td>${dados.marca}</td>
+                            <td>${dados.ano}</td>
+                            <td>${dados.endereco}</td>
+                            <td>${dados.email}</td>
+                            <td>${dados.telefone}</td>
                         </tr>`;
                         tbody.innerHTML += row;
                     });
