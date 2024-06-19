@@ -83,9 +83,8 @@ app.post("/alterar/:id", function (req, res) {
 });
 
 app.get('/buscar', async (req, res) => {
-    res.render("buscar");
     const { filtro } = req.query;
-
+    
     try {
         const dados = await agendamentos.findAll({
             where: {
