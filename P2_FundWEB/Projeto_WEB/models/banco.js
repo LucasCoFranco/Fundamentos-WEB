@@ -32,5 +32,6 @@ Agendamentos.sync({force:true}) //essa linha cria o banco de dados e NÃO pode e
 
 module.exports = {
     Sequelize: Sequelize,
-    sequelize: sequelize
+    sequelize: sequelize,
+    agendamentos: Agendamentos
 }
