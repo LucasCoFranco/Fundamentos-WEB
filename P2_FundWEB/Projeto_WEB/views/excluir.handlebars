@@ -11,11 +11,17 @@
     <p>Você está prestes a excluir os seguintes dados:</p>
 
     <ul>
-        <li><strong>Id:</strong> {{dados.id}}</li>
-        <li><strong>Nome:</strong> {{dados.nome}}</li>
+        <li><strong>Id:</strong> {{ dados.id }}</li>
+        <li><strong>Nome:</strong> {{ dados.nome }}</li>
+        <li><strong>Veiculo:</strong> {{ dados.veiculo }}</li>
+        <li><strong>Marca:</strong> {{ dados.marca }}</li>
+        <li><strong>Ano:</strong> {{ dados.ano }}</li>
+        <li><strong>Endereço:</strong> {{ dados.endereco }}</li>
+        <li><strong>E-mail:</strong> {{ dados.email }}</li>
+        <li><strong>Telefone:</strong> {{ dados.telefone }}</li>
     </ul>
 
-    <form action="/excluir/{{dados.id}}" method="POST">
+    <form action="/excluir/{{ dados.id }}" method="POST">
         <button type="submit">Confirmar Exclusão</button>
     </form>
 </body>
