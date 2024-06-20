@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Cadastrados</title>
+</head>
+<body>
+    <h2>Dados Cadastrados</h2>
+    <form action="/buscar" method="GET">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="veiculo">Veículo:</label>
+        <input type="text" id="veiculo" name="veiculo">
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca">
+
+        <label for="ano">Ano:</label>
+        <input type="text" id="ano" name="ano">
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone">
+
+        <button type="submit">Buscar</button> 
+    </form>
+    <a href="/">Cadastrar</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Veículo</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Endereço</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+                <td>{{veiculo}}</td>
+                <td>{{marca}}</td>
+                <td>{{ano}}</td>
+                <td>{{endereco}}</td>
+                <td>{{email}}</td>
+                <td>{{telefone}}</td>
+                <td><a href="../alterar/{{id}}">Editar</a></td>
+                <td><a href="../excluir/{{id}}">Excluir</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
