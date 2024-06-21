@@ -83,13 +83,21 @@ app.post("/alterar/:id", function (req, res) {
 });
 
 app.get('/buscar', async (req, res) => {
-    const { filtro } = req.query;
+    const { nome, veiculo, marca, ano, endereco, email, telefone } = req.query;
+    const filtro = {};
     
+    if(nome) filtro.nome = {[Op.like]:  `%${nome}%` }; 
+    if(veiculo) filtro.veiculo = {[Op.like]:  `%${veiculo}%` }; 
+    if(marca) filtro.marca = {[Op.like]:  `%${marca}%` }; 
+    if(ano) filtro.ano = {[Op.like]:  `%${ano}%` }; 
+    if(endereco) filtro.endereco = {[Op.like]:  `%${endereco}%` }; 
+    if(email) filtro.email = {[Op.like]:  `%${email}%` }; 
+    if(telefone) filtro.telefone = {[Op.like]:  `%${telefone}%` }; 
+
+
     try {
         const dados = await agendamentos.findAll({
-            where: {
-                nome: { [Op.like]: `%${filtro}%` } // Filtra pelo nome (ajuste conforme necessário)
-            }
+            where: filtro 
         });
 
         res.render("visualizar", { dados: dados }); // Renderiza a página de visualização com os dados filtrados
